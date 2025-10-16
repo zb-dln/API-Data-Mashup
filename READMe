@@ -1,0 +1,34 @@
+Project Description:
+This is a project of a web based PokeDex where you can search up Pokemon. This can be done by either searching up the name itself or searching up the PokeDex number associated with that Pokemon. For example, Bulbasour is also known as pokemon number 1, and either searching up the name of the number provides an applicable result. 
+
+What you get from the search result is:
+- The name of the Pokemon
+- The in-game sprite
+- The stats of the pokemon (based from the games)
+- The pokemon color
+- The habitat of the pokemon, and;
+- The type of the pokemon
+
+APIs Used:
+First API -> https://pokeapi.co/api/v2/pokemon/
+Second API -> https://pokeapi.co/api/v2/pokemon-species/
+
+Setup:
+All you need to do for setup is to download/duplicate the html, css, and javascript file while also using the internet for Axios to fetch data from the Pokemon API. Open up the HTML file to run the app.
+
+- git clone https://github.com/yourusername/pokedex-singleview.git
+- cd pokedex-singleview
+
+Data Join Explanation:
+The app joins data from the the two apis using the same pokemon name which acts as the ID. From the first API, the script gets stats like HP, Attack stats, Defense stats, and type.
+However, the second API is needed since it allows you to get the qualitative features such as the color and habitat of the pokemon. In the loading state, the website will display "Loading..." as data is being fetched by the API, and if data is not found, it will display "Pokemon not found".
+
+For example, searching up the name Pikachu will give me his stat spread using the in-game data, and the power index is calculated by adding all of Pikachu's stats together through the line: 
+
+const powerIndex = pokemon.stats.reduce((sum, s) => sum + s.base_stat, 0);
+
+Limitations:
+There is no offline functionality for this mashup since the hosted APIs are only publicly available links rather than locally hard-coded software. Since there may be new Pokemon being updated in this API, some pokemon may have missing habitat attributes. You can only search up one pokemon at a time.
+
+AI USAGE:
+AI was used during the making of this project for the scaffolding of the code along with assistance regarding debugging, but the logic and functionality of the website was done manually.
